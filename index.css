@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    width: 600px;
+    font-family: Smythe, sans-serif;
+}
+
+#header {
+    display: flex;
+    flex-direction:  column;
+    justify-content: center;
+    background-image: url('/headerImg.jpg');
+    color: whitesmoke;
+    height: 167px;
+    background-position: 40% 70%;
+}
+
+#header h1, p {
+    margin: 0;
+    padding-left: 50px;
+    font-weight: 400;
+}
+
+.menu-item-emoji {
+    font-size: 70px;
+    margin: 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 508px;
+    height: 140px;
+    margin: 0 auto;
+    border-bottom: 1px black solid;
+}
+
+.menu-item-info {
+    display: flex;
+    align-items: center;
+}
+
+.menu-item-add-btn {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+}
