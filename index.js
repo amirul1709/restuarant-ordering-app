@@ -4,7 +4,7 @@ const menuItems = document.getElementById('menu-items')
 
 function getMenuItems () {
     const items = menuArray.map((item) => {
-       const { name, ingredients, id, price, emoji} = item
+       const { name, ingredients, price, emoji, id} = item
         return `
             <div class="menu-item">
                 <div class="menu-item-info">
