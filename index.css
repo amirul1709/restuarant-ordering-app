@@ -60,3 +60,10 @@ body {
 .menu-item-price {
     font-size: 20px;
 }
+
+#your-order {
+    height: 319px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
