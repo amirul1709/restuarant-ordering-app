@@ -3,7 +3,7 @@ import { menuArray } from './data.js'
 const menuItems = document.getElementById('menu-items')
 
 function getMenuItems () {
-    const items = menuArray.map((item) => {
+    return menuArray.map((item) => {
        const { name, ingredients, price, emoji, id} = item
         return `
                 <div class="menu-item">
@@ -15,11 +15,10 @@ function getMenuItems () {
                                 <p class="menu-item-price">$${price}</p>
                             </div>
                     </div>
-                    <button class="menu-item-add-btn">+</button>
+                    <button class="menu-item-add-btn" data-menu-item-id="${id}">+</button>
                 </div>
                 `
-    })
-    return items.join('')
+    }).join('')
 }
 
 function addMenuItems () {
@@ -27,3 +26,17 @@ function addMenuItems () {
 }
 
 addMenuItems()
+
+const cart = []
+
+menuItems.addEventListener('click', (event) => {
+    const button = event.target.closest('.menu-item-add-btn')
+    if (!button) {
+        return
+    }
+
+    const itemId = parseInt(button.dataset.menuItemId)
+
+    console.log(menuArray.find((item) => item.id === itemId))
+
+})
