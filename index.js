@@ -2,6 +2,8 @@ import { menuArray } from './data.js'
 
 const menuItems = document.getElementById('menu-items')
 const yourOrderSummery = document.getElementById('your-order-summary')
+const checkOut = document.getElementById('checkout')
+const yourOrder = document.getElementById('your-order')
 
 
 //get menu items function
@@ -40,12 +42,17 @@ menuItems.addEventListener('click', (event) => {
     }
 
     const itemId = parseInt(button.dataset.menuItemId)
-
     const item = menuArray.find((item) => item.id === itemId)
 
-    console.log(item)
     cart.push(item)
+
+    yourOrder.style.display = 'flex'
+
     yourOrderSummery.innerHTML = getCheckoutItems()
+    checkOut.innerHTML = `
+        <span>Total price:</span>
+        <span id="total-price">$${getTotalPrice()}</span>
+        `
 })
 
 //get items for checkout function
@@ -53,14 +60,18 @@ function getCheckoutItems () {
     return cart.map((item) => {
         const { name, price} = item
         return `
-            <div class="order-item">
-                <div>
-                    <span class="item-name">${name}</span>
-                    <button class="remove-item-btn">remove</button>
+                <div class="order-item">
+                    <div>
+                        <span class="item-name">${name}</span>
+                        <button class="remove-item-btn">remove</button>
+                    </div>
+                    <span class="item-price">$${price}</span>
                 </div>
-                <span class="item-price">$${price}</span>
-            </div>
-        `
+                `
     }).join('')
+}
 
+function getTotalPrice () {
+    return cart.reduce((total, item) => {
+        return total + item.price}, 0)
 }
