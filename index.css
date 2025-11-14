@@ -32,7 +32,7 @@ body {
     width: 508px;
     height: 140px;
     margin: 0 auto;
-    border-bottom: 1px black solid;
+    border-bottom: 1px #D2D2D2 solid;
 }
 
 .menu-item-info {
@@ -66,4 +66,54 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#checkout, .order-item {
+    display: flex;
+    justify-content: space-between;
+    width: 508px;
+}
+
+.item-name {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.item-price {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+button {
+    cursor: pointer;
+}
+
+.remove-item-button {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    font-family: verdana, sans-serif;
+    font-size: 12px;
+    color: #BBBBBB;
+}
+
+.order-item, #checkout {
+    margin: 10px 0;
+}
+
+#your-order-summary {
+    border-bottom: 1px #D2D2D2 solid;
+}
+
+#checkout-button {
+    margin-top: 50px;
+    color: #FFFFFF;
+    background-color: #16DB99;
+    border: none;
+    width: 508px;
+    height: 60px;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
 }

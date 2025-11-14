@@ -19,11 +19,26 @@
         <div id="your-order">
             <h2>Your Order</h2>
             <div id="your-order-summary">
-                <ul id="your-order-list">
-                    <li>Pizza</li>
-                    <li>Burger</li>
-                </ul>
+                <div class="order-item">
+                    <div>
+                        <span class="item-name">Burger</span>
+                        <button class="remove-item-button">remove</button>
+                    </div>
+                    <span class="item-price">$10</span>
+                </div>
+                <div class="order-item">
+                    <div>
+                        <span class="item-name">Pizza</span>
+                        <button class="remove-item-button">remove</button>
+                    </div>
+                    <span class="item-price">$12</span>
+                </div>
             </div>
+            <div id="checkout">
+                <span>Total:</span>
+                <span id="total-price">$21</span>
+            </div>
+            <button id="checkout-button">Checkout</button>
         </div>
 	<script src="index.js" type="module"></script>
     </body>
