@@ -1,7 +1,10 @@
 import { menuArray } from './data.js'
 
 const menuItems = document.getElementById('menu-items')
+const yourOrderSummery = document.getElementById('your-order-summary')
 
+
+//get menu items function
 function getMenuItems () {
     return menuArray.map((item) => {
        const { name, ingredients, price, emoji, id} = item
@@ -29,6 +32,7 @@ addMenuItems()
 
 const cart = []
 
+//add button event listener
 menuItems.addEventListener('click', (event) => {
     const button = event.target.closest('.menu-item-add-btn')
     if (!button) {
@@ -37,6 +41,26 @@ menuItems.addEventListener('click', (event) => {
 
     const itemId = parseInt(button.dataset.menuItemId)
 
-    console.log(menuArray.find((item) => item.id === itemId))
+    const item = menuArray.find((item) => item.id === itemId)
 
+    console.log(item)
+    cart.push(item)
+    yourOrderSummery.innerHTML = getCheckoutItems()
 })
+
+//get items for checkout function
+function getCheckoutItems () {
+    return cart.map((item) => {
+        const { name, price} = item
+        return `
+            <div class="order-item">
+                <div>
+                    <span class="item-name">${name}</span>
+                    <button class="remove-item-btn">remove</button>
+                </div>
+                <span class="item-price">$${price}</span>
+            </div>
+        `
+    }).join('')
+
+}
