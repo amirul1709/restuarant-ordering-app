@@ -4,6 +4,7 @@ const menuItems = document.getElementById('menu-items')
 const yourOrderSummery = document.getElementById('your-order-summary')
 const checkOut = document.getElementById('checkout')
 const yourOrder = document.getElementById('your-order')
+const yourCardInfo = document.getElementById('your-card-info')
 
 
 //get menu items function
@@ -36,12 +37,11 @@ const cart = []
 
 //add button event listener
 menuItems.addEventListener('click', (event) => {
-    const button = event.target.closest('.menu-item-add-btn')
-    if (!button) {
+    const addItemButton = event.target.closest('.menu-item-add-btn')
+    if (!addItemButton) {
         return
     }
-
-    const itemId = parseInt(button.dataset.menuItemId)
+    const itemId = parseInt(addItemButton.dataset.menuItemId)
     const item = menuArray.find((item) => item.id === itemId)
 
     cart.push(item)
@@ -75,3 +75,11 @@ function getTotalPrice () {
     return cart.reduce((total, item) => {
         return total + item.price}, 0)
 }
+
+yourOrder.addEventListener('click', (event) => {
+    const checkoutButton = event.target.closest('#checkout-btn')
+    if (!checkoutButton) {
+        return
+    }
+    yourCardInfo.style.display = 'flex'
+})

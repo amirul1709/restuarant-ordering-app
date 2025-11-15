@@ -127,3 +127,47 @@ button {
     font-size: 16px;
     font-weight: 700;
 }
+
+#your-card-info {
+    display: none;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    box-shadow: 5px 5px 255px 0 #00000080;
+    position: fixed;
+    top: 200px;
+    left: 25px;
+    background: #FFFFFF;
+}
+
+#your-card-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    width: 550px;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#your-card-form input {
+    margin-bottom: 20px;
+    width: 475px;
+    height: 40px;
+    border-radius: 3px;
+    border-width: 1px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#your-card-submit {
+    width: 475px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    background-color: #16DB99;
+    color: #FFFFFF;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
