@@ -5,6 +5,7 @@ const yourOrderSummery = document.getElementById('your-order-summary')
 const checkOut = document.getElementById('checkout')
 const yourOrder = document.getElementById('your-order')
 const yourCardInfo = document.getElementById('your-card-info')
+const yourCardForm = document.getElementById('your-card-form')
 
 
 //get menu items function
@@ -82,4 +83,12 @@ yourOrder.addEventListener('click', (event) => {
         return
     }
     yourCardInfo.style.display = 'flex'
+})
+
+yourCardForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    yourCardInfo.style.display = 'none'
+    yourOrderSummery.innerHTML = `<p>Thank you!</p>`
+    checkOut.innerHTML = ``
 })
