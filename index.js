@@ -6,6 +6,7 @@ const checkOut = document.getElementById('checkout')
 const yourOrder = document.getElementById('your-order')
 const yourCardInfo = document.getElementById('your-card-info')
 const yourCardForm = document.getElementById('your-card-form')
+const thankYouMessage = document.getElementById('thank-you-message')
 
 
 //get menu items function
@@ -88,7 +89,11 @@ yourOrder.addEventListener('click', (event) => {
 yourCardForm.addEventListener('submit', (event) => {
     event.preventDefault()
 
+    const name   = document.getElementById('your-card-name').value
+
     yourCardInfo.style.display = 'none'
-    yourOrderSummery.innerHTML = `<p>Thank you!</p>`
-    checkOut.innerHTML = ``
+    yourOrder.style.display = 'none'
+
+    thankYouMessage.innerHTML = `<p>Thank you ${name}! Your order is on the way!</p>`
+    thankYouMessage.style.display = 'flex'
 })
